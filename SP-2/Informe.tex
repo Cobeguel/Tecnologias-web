@@ -1,0 +1,204 @@
+\documentclass[12pt]{article}
+
+%Packages
+\usepackage[spanish,es-lcroman,es-nosectiondot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{amsthm}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\usepackage{systeme}
+
+%Graphics
+\usepackage{graphicx}
+%\usepackage{hyperref}
+\graphicspath{{./}}
+%\usepackage{mathtools}
+\usepackage{adjustbox}
+
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+
+%Auxiliar package 
+\usepackage{float} 
+%\usepackage[normalem]{ulem}
+%\useunder{\uline}{\ul}{}
+\usepackage{textcomp}
+%Document margins
+\usepackage[margin=2cm]{geometry}
+
+%Title definition
+\author{}
+\title{Informe: Sentido Animal}
+\date{}
+
+%Alias definitions
+\let\bs\textbackslash
+
+%Variables definitions
+\newcommand{\nls}{\\[0.10pt]}
+\newcommand{\ngls}{\\[0.20cm]}
+\newcommand{\nlsm}{\\[0.3cm]}
+\newcommand{\nin}{\noindent}
+
+\newcommand{\dps}{$: \ $}
+\newcommand{\limit}{\lim_{n \to \infty}}
+
+%More definitions
+\newtheorem{law}{Ley}
+
+\theoremstyle{definition}
+\newtheorem*{defn}{Definición}
+\newtheorem*{note}{Nota}
+\newtheorem*{theo-ne}{}
+%Delete indentation
+%\setlength{\parindent}{0pt}
+
+\def\N{\mathbb{ N}}
+\def\R{\mathbb{ R}}
+\def\S{\mathbb{ S}}
+\def\O{\mathnormal{ O}}
+\def\Om{\Omega}
+
+%\pagestyle{fancy}
+%\fancyfoot{}{}{}
+%\fancyhead[LO,RE]{\leftmark}
+%\fancyhead[LE,RO]{\thepage}
+     
+ 
+
+\pagestyle{fancy}
+%\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+\fancyhf{}
+%\rhead{\rightmark}
+\fancyhead[L,L]{Tecnologías Web}
+\fancyhead[R,R]{Informe Subproblema-2}
+%\fancyfoot[L,L]{\thepage}
+%\lhead{\scshape \nouppercase{\firstmark}}
+\cfoot{\thepage}
+\renewcommand{\footrulewidth}{0.4pt}
+%\renewcommand{\thesection}{\arabic{section}}
+%\renewcommand\sectionmark[1]{%
+%   \markright{\thesection\ #1}}
+
+\usepackage{invoice}
+%\usepackage{longtable}
+
+\renewcommand{\Activity}{Descripción}
+\renewcommand{\SumFees}{Subtotal}
+\renewcommand{\SubtotalProject}{Subtotal + IVA}
+\renewcommand{\SubtotalFee}{Subtotal acumulado}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\maketitle
+
+\section*{Información básica}
+
+Sentido Animal es una asociación sin ánimo de lucro, centrada en la protección de los animales. Los datos relevantes de esta entidad son:
+
+\begin{itemize}
+\item[•] Identidad del Responsable: Charo Peromingo Jiménez
+\item[•] Domicilio fiscal: Calle Aristóteles Nº 176, 04700, El Ejido (Almería)
+\item[•] CIF: G04889614
+\item[•] Correo de contacto: sentidoanimal.elejido@gmail.com
+\end{itemize}
+
+Dicha asociación dedica fundamentalmente su esfuerzo hacia:
+
+\begin{itemize}
+\item[•] Recoger perros y gatos abandonados en la calle.
+\item[•] Fomentar la adopción de perros 
+\item[•] Aplicar la metodología CER a los gatos (Castración, Esterilización y Reubicación).
+\end{itemize}
+
+\section*{Estado actual}
+
+La asociación descrita carece actualmente de página web. Su principal fuente de difusión y promoción son las redes sociales, fundamentalmente \textit{Instagram} y \textit{Facebook}.\\
+
+Carecen de sede física fija donde realizar las actividades descritas. Para ello se nutren de distintas casas de acogida que permiten la distribución de los animales rescatados.
+
+\section*{Requisitos y funcionalidades}
+
+La asociación solicita los siguientes requisitos:
+
+\begin{itemize}
+\item[•] Que se disponga de una página principal que contenga la información relevante, así como imágenes destacadas.
+\item[•] Que los usuarios de la página puedan adscribirse a la misma. Dichos usuarios adscritos podrán realizar donaciones, comprar en la tienda online, solicitar ser casa de acogida y modificar su perfil si fuera necesario.
+\item[•] Que la asociación pueda modificar cierto contenido de la página: imágenes, textos, etc, en virtud de sus necesidades.
+\end{itemize}
+
+
+En resumen, la asociación solicita un gestor de contenidos que ellos mismos puedan gestionar desligándose del código asociado cuyo mantenimiento queda al cargo de EL EQUIPO DESARROLLADOR.\\
+
+Para ello se acuerdan las siguientes funcionalidades:
+
+\subsection*{Contenidos de la página web}
+
+Se distingue fundamentalmente entre información estática (aquella asociada al código) e información dinámica (aquella susceptible a cambios).\\
+
+\subsubsection*{Contenido estático}
+
+El principal contenido estático será la infraestructura del propio gestor de contenidos. 
+
+\subsubsection*{Contenido dinámico}
+
+El contenido dinámico será: la dotación para gestionar usuarios, productos y formularios, las imágenes de las páginas, así como el contenido multimedia asociado. 
+
+Dicho listado podrá sufrir modificaciones durante el proceso de desarrollo.
+
+
+\subsection*{Base de datos}
+
+La base de datos estará creada con MySQL y se gestionará con PHP. Dicha base de datos deberá contener:
+
+\begin{itemize}
+\item[•] Información sobre los usuarios y todos los derivados propios de la administración.
+\item[•] Información sobre los productos alojados en la web.
+\item[•] Información sobre el contenido multimedia y su almacenamiento.
+\end{itemize}
+
+El contenido multimedia podría adscribirse a servidores CDN.
+
+
+\subsection*{Perfiles de usuario}
+
+Se definen los siguientes perfiles de usuario:
+
+\begin{itemize}
+\item[•] Perfil de cliente: Se trata del usuario más básico cuyo rol es el de consumidor.
+\item[•] Perfil de administrador: Se trata de una extensión del perfil de cliente que puede realizar modificaciones en la página web por medio del gestor de contenidos.
+\item[•] Perfil de súper-administrador: Se trata de una extensión del perfil de administrador que puede realizar cambios en el propio gestor de contenidos. En este caso, este rol recae sobre EL EQUIPO DESARROLLADOR.
+\end{itemize}
+
+\subsection*{Menú con las principales funciones}
+
+Los menús variarán en función del usuario:
+
+\begin{itemize}
+
+\item[•] Perfil de cliente: las principales funciones serán: \textit{realizar donación}, \textit{realizar compra}, \textit{solicitar ser casa de acogida } y \textit{modificar perfil}.
+
+\item[•] Perfil de administrador: se extienden las funcionalidades a: \textit{gestionar productos}, \textit{gestionar contenido multimedia}, \textit{gestionar formularios de casa de acogida}.
+
+\item[•] Perfil de súper-administrador: tiene todas las funcionalidades posibles, añadiendo: \textit{gestionar gestor de contenidos} que permitirá realizar modificaciones en el gestor de contenidos. Por otro lado, las funcionalidades de este usuario se realizarán directamente sobre los ficheros en el servidor.
+
+\end{itemize}
+
+Estas funcionalidades deberán extenderse y podrían sufrir modificaciones en futuras resoluciones.
+
+\subsection*{Plan de desarrollo y evaluación}
+
+El plan de desarrollo se seguirá usando las herramientas y criterios descritos en el documento \textit{Guía de Buenas Prácticas} adjunto en el Subproblema-1.
+
+\end{document}
+
+
+
